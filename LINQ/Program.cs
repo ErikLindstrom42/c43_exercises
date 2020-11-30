@@ -71,7 +71,7 @@ namespace linq
     15, 8, 21, 24, 32, 13, 30, 12, 7, 54, 48, 4, 49, 96
 };
 
-            IEnumerable<int> sortedNumbers = numbers2.OrderBy(n => n);
+            List<int> sortedNumbers = numbers2.OrderBy(n => n).ToList();
 
             foreach (int number in sortedNumbers)
             {
@@ -135,7 +135,7 @@ namespace linq
                 Console.WriteLine($"{number}");
             }
             //Same as above but using linq
-            List<int> linqSquares = wheresSquaredo.TakeWhile(x => !(Math.Sqrt(x) % 1 == 0)).ToList();
+            List<int> linqSquares = wheresSquaredo.TakeWhile(x => (Math.Sqrt(x) % 1 != 0)).ToList();
 
             Console.WriteLine("Linq NoSquares");
             foreach (int number in linqSquares)
@@ -143,7 +143,7 @@ namespace linq
                 Console.WriteLine($"{number}");
             }
 
-            //  Programs.Customers();
+            Programs.Customers();
         }
 
 
